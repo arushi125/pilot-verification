@@ -1,3 +1,9 @@
+#!pip install deepface --proxy=172.16.1.61:8080
+#!pip install tf-keras --proxy=172.16.1.61:8080
+#!pip install tensorflow --proxy=172.16.1.61:8080
+#!pip install --upgrade deepface
+from deepface import DeepFace
+
 model = DeepFace.build_model("Facenet")
 
 result = DeepFace.verify(
