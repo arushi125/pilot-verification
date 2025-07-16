@@ -22,7 +22,7 @@ from matplotlib import pyplot as plt
 # Step 1: Load DeepFace model wrapper (Facenet)
 print("LOADING Model")
 model_wrapper = DeepFace.build_model("Facenet")
-model = model_wrapper.model  # 👈 Get the underlying Keras model
+model = model_wrapper.model  # Get the underlying Keras model
 print("Model LOADED")
 
 # Step 2: Preprocess face images manually
@@ -126,7 +126,7 @@ def detect_align(img_path):
     faces = DeepFace.extract_faces(
         img_path=img_path,
         detector_backend="opencv",  # Try "retinaface" if accuracy matters
-        enforce_detection=False     # 👈 allow weak or partial detection
+        enforce_detection=False     #  allow weak or partial detection
     )
     if len(faces) == 0:
         raise ValueError(f"No face detected in {img_path}")
@@ -148,7 +148,7 @@ threshold = 0.35  # for ArcFace, adjust if needed
 
 # Result
 print(f"Cosine Similarity: {cos_sim:.4f}")
-print("✅ Same person" if cos_sim > threshold else "❌ Different people")
+print(" Same person" if cos_sim > threshold else " Different people")
 
 # Show images
 fig, ax = plt.subplots(1, 2, figsize=(8, 4))
