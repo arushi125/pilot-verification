@@ -66,7 +66,7 @@ distance = norm(embedding1 - embedding2)
 threshold = 5  # typical Facenet threshold
 
 print(f"Distance = {distance:.4f}")
-print("✅ Same person" if distance < threshold else "❌ Different people")
+print("Same person" if distance < threshold else "Different people")
 import cv2
 import numpy as np
 from deepface import DeepFace
